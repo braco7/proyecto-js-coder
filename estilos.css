@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(105, 104, 104);
+}
+
+h1,h2 {
+    background-color: rgb(12, 133, 133);
+    color:black;
+    text-align: center;
+    font-weight: 300;
+}
+h1 {
+    font-weight: 600;
+}
+
+.yellowFont {
+    color: rgb(234, 243, 103);
+    font-style: italic;
+    font-weight: 700;
+}
