@@ -3,10 +3,11 @@ class Producto {
         this.id=id;
         this.precio=precio;
         this.descripcion=descripcion;
-        this.stock=stock;
+        this.stock=parseFloat(stock);
     }
-    actualizaStock(){
-        this.stock = this.stock-1;
+    
+    actualizaStock() {
+        this.stock = this.stock -1;
     }
 }
 
@@ -17,10 +18,37 @@ const producto4 = new Producto(4,6900,"Casa para perro de lujo",6)
 
 // console.log(producto1)
 
-let productoId = prompt("Seleccione el producto (Elija un número) \n" + producto1.id + ".- " + producto1.descripcion + " ---> Precio: " + producto1.precio
-+"\n" + producto2.id +  ".- "  + producto2.descripcion + " ---> Precio: " + producto2.precio
-+"\n" + producto3.id +  ".- "  + producto3.descripcion + " ---> Precio: " + producto3.precio
-+"\n" + producto4.id +  ".- "  + producto4.descripcion + " ---> Precio: " + producto4.precio)
+let productoId = prompt("Seleccione el producto (Elija un número) \n" + producto1.id + ".- " + producto1.descripcion + " ---> Precio: " + producto1.precio + " ---> Stock: " + producto1.stock
++"\n" + producto2.id +  ".- "  + producto2.descripcion + " ---> Precio: " + producto2.precio + " ---> Stock: " + producto2.actualizaStock()
++"\n" + producto3.id +  ".- "  + producto3.descripcion + " ---> Precio: " + producto3.precio + " ---> Stock: " + producto3.stock
++"\n" + producto4.id +  ".- "  + producto4.descripcion + " ---> Precio: " + producto4.precio + " ---> Stock: " + producto4.stock)
+
+
+    stock = 1;
+    console.log(stock)
+    switch (productoId) {
+        case "1":
+            stock = producto1.actualizaStock();
+            parseInt(stock);
+            break;
+        case "2":
+            stock = producto2.actualizaStock();
+            parseInt(stock);
+            break;
+        case "3":
+            stock = producto3.actualizaStock();
+            parseInt(stock);
+            break;
+        case "4":
+            stock = producto4.actualizaStock();
+            parseInt(stock);
+            break;
+        default:
+            alert = "Error"
+    }
+
+
+console.log(stock)
 
 const buscarMonto = function(productoId) {
     let monto = 0
@@ -35,7 +63,7 @@ const buscarMonto = function(productoId) {
             monto = producto3.precio
           break;
           case "4":
-              monto = producto4.precio
+            monto = producto4.precio
             break;
         default:
            alert = "Error"
@@ -86,7 +114,11 @@ let costoSinEnvio = calcularDescuento(monto)
 let costoDeEnvio = calcEnvio(monto)
 
 // Mostrar total del monto a pagar
-alert(`Precio neto con descuento ${costoSinEnvio} \nCosto de envío ${costoDeEnvio} \nTotal a pagar por su compra ${suma(costoSinEnvio,costoDeEnvio)}`);
+
+alert (`Precio neto con descuento ${costoSinEnvio}
+\nCosto de envío ${costoDeEnvio} 
+\nTotal a pagar por su compra ${suma(costoSinEnvio,costoDeEnvio)} 
+\n Y la existencia en depósito es de ${stock} unidades`);
 
 
  
