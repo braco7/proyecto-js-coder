@@ -3,11 +3,12 @@ class Producto {
         this.id=id;
         this.precio=precio;
         this.descripcion=descripcion;
-        this.stock=parseFloat(stock);
+        this.stock=parseInt(stock);
     }
     
     actualizaStock() {
         this.stock = this.stock -1;
+        return this.stock;
     }
 }
 
