@@ -1,3 +1,7 @@
-Inicio de proyecto de un carrito de compras para un Ecommerce. 
+Inicio de proyecto de un cotizador de precios. 
 
-Por ahora se establece la funcionalidad de cálculo de precios, descuentos aplicados e impuestos Utilizando funciones
+
+Expectativas:
+Se estima desarrollar funcionalidad multiple. Esto es, que el usuario este en capacidad de escoger varios productos para hacer una cotizacion del monto total o por separado
+Capacidad de manejar diferentes tasas de impuestos segun el producto
+Exportar cotizaciones a xlsx o pdf.
