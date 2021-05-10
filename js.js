@@ -12,69 +12,32 @@ class Producto {
     }
 }
 
+// Se crean 4 objetos (Una lista de productos sencilla)
 const producto1 = new Producto(1,2580,"Alimento 50kg",5);
 const producto2 = new Producto(2,350,"Juguete para perros hueso",4)
 const producto3 = new Producto (3,4900,"Casa para perros",2)
 const producto4 = new Producto(4,6900,"Casa para perro de lujo",6)
 
-// console.log(producto1)
+// Armamos el array de los objetos de la lista haciendo push en el array "productos"
+const productos = []
+productos.push(producto1)
+productos.push(producto2)
+productos.push(producto3)
+productos.push(producto4)
 
-let productoId = prompt("Seleccione el producto (Elija un número) \n" + producto1.id + ".- " + producto1.descripcion + " ---> Precio: " + producto1.precio + " ---> Stock: " + producto1.stock
-+"\n" + producto2.id +  ".- "  + producto2.descripcion + " ---> Precio: " + producto2.precio + " ---> Stock: " + producto2.actualizaStock()
-+"\n" + producto3.id +  ".- "  + producto3.descripcion + " ---> Precio: " + producto3.precio + " ---> Stock: " + producto3.stock
-+"\n" + producto4.id +  ".- "  + producto4.descripcion + " ---> Precio: " + producto4.precio + " ---> Stock: " + producto4.stock)
+// Se usa ".map" para "imprimir" las opciones en el prompt (A traves de la funcion en el parametro)
+let productosPrompt = productos.map(function(i){
+    return `${i.id}.- Nombre:- ${i.descripcion} - Precio: ${i.precio}- Stock: ${i.stock}`
+}).join("\n")
 
+// Pedir al usuario que ingrese un numero
+let productoId = prompt("Seleccione el producto (Elija un número) \n" + productosPrompt)
 
-    stock = 1;
-    console.log(stock)
-    switch (productoId) {
-        case "1":
-            stock = producto1.actualizaStock();
-            parseInt(stock);
-            break;
-        case "2":
-            stock = producto2.actualizaStock();
-            parseInt(stock);
-            break;
-        case "3":
-            stock = producto3.actualizaStock();
-            parseInt(stock);
-            break;
-        case "4":
-            stock = producto4.actualizaStock();
-            parseInt(stock);
-            break;
-        default:
-            alert = "Error"
-    }
+//Buscar en array el dato ingresado con el metodo "find"
+let seleccion = productos.find(j => j.id == productoId)
 
-
-console.log(stock)
-
-const buscarMonto = function(productoId) {
-    let monto = 0
-    switch(productoId) {
-        case "1":
-            monto = producto1.precio
-          break;
-        case "2":
-            monto = producto2.precio
-          break;
-        case "3":
-            monto = producto3.precio
-          break;
-          case "4":
-            monto = producto4.precio
-            break;
-        default:
-           alert = "Error"
-      }
-    return monto
-}
-
-
-let monto = buscarMonto(productoId)
-parseInt(monto)
+let monto = seleccion.precio
+monto = parseInt(monto)
 
 // Función de sumar (Utilizada a lo largo del programa), variable anónima
 const suma = function (a,b) {return parseInt(a)+parseInt(b)}
@@ -119,7 +82,7 @@ let costoDeEnvio = calcEnvio(monto)
 alert (`Precio neto con descuento ${costoSinEnvio}
 \nCosto de envío ${costoDeEnvio} 
 \nTotal a pagar por su compra ${suma(costoSinEnvio,costoDeEnvio)} 
-\n Y la existencia en depósito es de ${stock} unidades`);
+\n Y la existencia en depósito ahora es ${seleccion.actualizaStock()} unidades`);
 
 
  
