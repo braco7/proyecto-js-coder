@@ -5,7 +5,8 @@ body {
 h1,h2 {
     background-color: rgb(12, 133, 133);
     color:black;
-    text-align: center;
+    text-align: left;
+    padding-left: 30px;
     font-weight: 300;
 }
 h1 {
@@ -16,4 +17,21 @@ h1 {
     color: rgb(234, 243, 103);
     font-style: italic;
     font-weight: 700;
+}
+
+#spanDeIva {
+    color: rgb(234, 243, 103);
+}
+
+#spanAmarillo {
+    color: rgb(234, 243, 103);
+}
+.azul {
+    background-color: aqua;
+    padding-left: 30px;
+}
+#tituloresult {
+    text-align:center; 
+    padding-top:15px; 
+    padding-bottom:15px
 }
