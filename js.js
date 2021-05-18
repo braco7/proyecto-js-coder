@@ -150,7 +150,7 @@ division.innerHTML = `<h2 class= "azul" id="tituloresult">Resultados</h2>
                       <h4 class= "azul">Costo de envío: $${costoDeEnvio} </h4>
                       <h4 class= "azul">Total a pagar por su compra: $${suma(costoConIva, costoDeEnvio)} </h4> 
                       <h4 class= "azul">Y la existencia en depósito ahora es de ${seleccion.actualizaStock()} ${unoUn(seleccion.actualizaStock())}</h4>`
-                      console.log(seleccion.actualizaStock())
+                      //console.log(seleccion.actualizaStock())
 
 document.body.appendChild(division)
 
