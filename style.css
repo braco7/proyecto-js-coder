@@ -6,3 +6,14 @@ h1 {
     text-align: center;
     color: rgb(71, 71, 71);
 }
+
+input {
+    margin: 5px;
+}
+.divisorio {
+    margin-bottom: 35px;
+}
+
+.form {
+    text-align: center;
+}
